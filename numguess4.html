@@ -1,5 +1,7 @@
 <html>
 <head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>numguess</title>
 </head>
 <body>
@@ -8,12 +10,14 @@
 <script>
 var num = Math.floor(Math.random()*100)
 document.write(num)
-str = "0-99 »çÀÌÀÇ °ªÀ» ÀÏ·ÂÇÏ½Ã¿À. "
+str = "0-99 ì‚¬ì´ì˜ ê°’ì„ ì…ë ¥í•˜ì‹œì˜¤. "
 a = []; b = []; c = []
 k = 0
 hint = ""
 while ( true ) {
-  a[k] = prompt(str + a + " " + hint)
+  x = prompt(str + a + " " + hint)
+  if ( x == null ) break
+  a[k] = x
   c[k] = num
   b[k] = k+1
   if ( num == a[k] ) {
