@@ -1,10 +1,17 @@
-<html><head></head><body>
-<div style="width:80vw"><canvas id="myChart"></canvas></div>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style> div { position: relative; width:80vw; margin: auto } </style>
+</head><body>
+<div style="width:80vw"><h1>PI Calculation by 과기인</h1>
+<canvas id="myChart"></canvas></div>
 <script>
 kk = 0
 nt = []
 pt = []
+pi = []
+
 for ( i=0 ; i<100000001 ; i++ ) {
   x = Math.random()
   y = Math.random()
@@ -26,8 +33,34 @@ for ( i=0 ; i<100000001 ; i++ ) {
   if ( i == 100000000 ) padd(i,kk)
 }
 function padd(t,k) {
-  alert(t + ":" + k + ":" + 4*k/t)
-  nt.push(t); pt.push(4*k/t)
+  //document.write(t + ":" + k + ":" + 4*k/t + "<br>")
+  nt.push(t); pt.push(4*k/t); pi.push(Math.PI)
 }
+
+datainfo = {
+  labels : nt,
+  datasets : [{
+    label : 'PI by Probability',
+    backgroundColor : ['gray', 'red'],
+    borderColor : 'blue',
+    data : pt,
+    tension : 0.5
+   },
+   {
+    label : 'PI (3.141592)',
+    backgroundColor : ['gray', 'green'],
+    borderColor : 'red',
+    data : pi,
+    tension : 0.5
+   },
+   ]
+}
+const config = {
+  type : 'line',
+  data : datainfo
+}
+mychart = new Chart(document.getElementById("myChart"), config)
 </script>
+
+
 </body></html>
