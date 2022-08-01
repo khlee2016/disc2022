@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+window.onload = function() {
+   mydata = [1,2,3,4,5]
+   addnum = Math.floor(Math.random()*100)
+   for ( k=0 ; k<addnum ; k++ ) {
+      mydata[5+k] = Math.floor(Math.random()*100)
+   }
+   sum = 0
+   for ( k=0 ; k<mydata.length ; k++ ) {
+      sum += mydata[k]
+      console.log(mydata[k], sum)
+   }
+   mydata[mydata.length] = sum
+   mydata[mydata.length] = sum/mydata.length
+   document.querySelector('h1').innerHTML = sum + "¹øÂ° °ª " + sum/mydata.length
+}
+</script>
+</head>
+<body>
+<h1></h1>
+</body>
+</html>

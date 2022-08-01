@@ -1,0 +1,30 @@
+<html>
+<head>
+<style>
+.orange { background : orange }
+</style>
+<script>
+window.onload = function() {
+   btn = document.querySelector('button')
+   uls = document.querySelector('ul')
+   btn.onclick = function() {
+      sum = prompt("project theme")
+      uls.innerHTML += "<li>" + sum + "</li>"
+   }
+   uls.addEventListener('click', function(e) {
+       lis = document.querySelectorAll('li')
+       for ( k=0 ; k<lis.length ; k++ )
+          lis[k].removeAttribute("class")
+       e.target.setAttribute("class", "orange")
+    })
+}
+</script>
+</head>
+<body>
+<div>
+<button>btn</button>
+<ul>
+</ul>
+</div>
+</body>
+</html>

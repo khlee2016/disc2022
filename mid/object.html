@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+window.onload = function() {
+   jinsu = { name: "Jinsu", age: 21 }
+   chulsu = { name: "Chulsu", age: 22 }
+   btn = document.querySelectorAll('button')
+   for ( k=0 ; k<btn.length ; k++ ) {
+     btn[k].onclick = function() {
+       sum = jinsu.age + chulsu.age
+       this.innerHTML += sum
+       jinsu.age++
+       chulsu.age++
+    }
+  }
+}
+</script>
+</head>
+<body>
+<div>
+<button>sum</button><button>sum</button><button>sum</button>
+</div>
+</body>
+</html>

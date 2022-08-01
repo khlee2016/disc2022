@@ -1,0 +1,27 @@
+<html>
+<head>
+<script>
+window.onload = function() {
+   high = 3
+   low = 2
+   delta = 0.00000001
+   var cbrt
+   var k = 1
+   for ( k=0 ; k<100 ; k++ ) {
+     cbrt = (high + low)/2
+     cbrt3 = cbrt * cbrt * cbrt
+     console.log(high, low, cbrt, cbrt3)
+     if ( cbrt3 > 10 ) high = cbrt
+     else if ( cbrt3 < 10 ) low = cbrt
+     if ( Math.abs(10-cbrt3) < delta ) break
+     k++
+
+   }
+   document.querySelector('h1').innerHTML = k + "¹øÂ° °ª " + cbrt
+}
+</script>
+</head>
+<body>
+<h1></h1>
+</body>
+</html>
