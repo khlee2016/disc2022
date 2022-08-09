@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book>
+		<title>채식주의자</title>
+		<author>한강</author>
+		<price>12000</price>
+	</book>
+	<book>
+		<title>종의 기원</title>
+		<author>정유정</author>
+		<price>10000</price>
+	</book>
+	<book>
+		<title>다르게 보는 힘</title>
+		<author>이종인</author>
+		<price>12600</price>
+	</book>
+</books>
+

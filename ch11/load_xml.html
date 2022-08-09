@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+</head>
+<body>
+
+	<script>
+		$(function(){
+			$.ajax({
+				url: 'book.xml',
+				dataType: 'xml',
+				success: function(data){
+					$(data).find('book').each(function(){
+						var title = $('title', this).text();
+						var author = $('author', this).text();
+						var price = $('price', this).text();
+						var txt = "<li>" + title + ", " + author + ", "+ price + "</li><hr>";
+						$('body').append(txt);
+					});
+				}
+			});	// end ajax
+		});		
+	</script>
+
+</body>
+</html>
+

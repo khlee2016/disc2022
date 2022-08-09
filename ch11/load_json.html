@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+</head>
+<body>
+
+	<script>
+		$(function(){
+
+			// json 파일을 data로 가져옴
+			$.getJSON('book.json', function(data){
+				var books = data.book;	// 배열 객체 선택
+
+				// 데이터 순회
+				$(books).each(function(i,obj){
+					var title = obj.title;
+					var author = obj.author;
+					var price = obj.price;
+					var txt = "<li>" + title + ", " + author + ", "+ price + "</li><hr>";
+						$('body').append(txt);
+				}); // 순회 끝
+				
+			});	// AJAX 호출 끝
+		});	
+
+	</script>
+
+</body>
+</html>
+
